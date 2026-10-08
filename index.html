@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>La ferme du Thier</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body data-vue="carnet">
+<nav class="bascule" aria-label="Carnet ou ferme">
+  <button data-bascule="carnet">Carnet</button><button data-bascule="ferme">Ferme</button>
+</nav>
+<div class="deux-volets">
+  <aside id="carnet" aria-label="Carnet"></aside>
+  <main id="ferme" aria-label="Ferme"></main>
+</div>
+<div id="couches"></div>
+<div id="impression"></div>
+<noscript><p>Cette page a besoin de JavaScript.</p></noscript>
+<script src="model.js"></script>
+<script src="vocab.js"></script>
+<script src="jeu.js"></script>
+<script src="app.js"></script>
+<script src="cours.js"></script>
+<script>
+  document.querySelectorAll("[data-bascule]").forEach((b) => b.addEventListener("click", () => window.Ferme.montrer(b.dataset.bascule)));
+</script>
+</body>
+</html>
